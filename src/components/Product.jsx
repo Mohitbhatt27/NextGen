@@ -4,6 +4,7 @@ import ashwa from '../assets/ashwa.jpeg'
 import neem from '../assets/neem.jpg'
 import turmeric from '../assets/turmeric.jpg'
 import bitter from '../assets/bitter.jpeg'
+import {motion} from 'framer-motion'
 
 function Product() {
   const list = [
@@ -33,19 +34,27 @@ function Product() {
       desc:'The fruit is rich in vitamins and minerals, including vitamins A, C, and various B vitamins, as well as iron and potassium. It is particularly renowned for its ability to help manage blood sugar levels. Bitter melon contains compounds that mimic insulin, helping to lower blood glucose levels and improve glucose tolerance. This makes it a staple in the diets of many cultures for managing diabetes and related conditions.'
     }
   ]
-  
+  const textVariants = {
+    hidden: { opacity: 0, x:-200},
+    visible: { opacity: 1, x:0}
+  }
+  const textVariants1={
+    hidden: { opacity: 0, x:200},
+    visible: { opacity: 1, x:0}
+  }
+
   return (
-    <div className=''>
+    <>
       {list.map((item,key)=>(
-        <div key={key} className={`rounded-full my-5 mx-10 bg-gradient-to-r flex ${key%2==0?'flex-row-reverse rounded-md':''} from-green-400 to-white`}>
-          <img className='rounded-full w-96' src={item.image} alt="" />
+        <motion.div initial='hidden' whileInView='visible' variants={key % 2 === 0 ? textVariants : textVariants1} transition={{duration:1}} key={key} className={`rounded-full my-5 mx-10 bg-gradient-to-r flex ${key%2==0?'flex-row-reverse rounded-md':''} from-green-400 to-white`}>
+          <img className='shadow-lg rounded-full w-96' src={item.image} alt="" />
           <div className='p-5 '>
             <p className='text-4xl pb-2 font-semibold'>{item.title}</p>
             <p className='text-xl'>{item.desc}</p>
           </div>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </>
   )
 }
 

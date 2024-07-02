@@ -1,12 +1,17 @@
 import React from 'react'
-import like from '../assets/like.png'
 import med from '../assets/med.jpeg'
 import line from '../assets/line.png'
+import {motion} from 'framer-motion'
 
 function Card() {
+  const textVariants = {
+    hidden: { opacity: 0, x:-200},
+    visible: { opacity: 1, x:0}
+  }
+
   return (
     <div className='flex justify-center my-10 mx-20'>
-      <div className='bg-pink-500 rounded-l-md py-5 pl-10 pr-20 flex flex-col justify-center invert'>
+      <motion.div initial='hidden' whileInView='visible' variants={textVariants} transition={{duration:0.5}} className='bg-pink-500 rounded-l-md py-5 pl-10 pr-20 flex flex-col justify-center invert'>
         <div>
           <img className='w-7 pb-3 inline-block' src={line} alt="" />
           <span className='pl-3 text-2xl font-semibold'>Why choose us!</span>
@@ -14,8 +19,8 @@ function Card() {
         <div className='flex '>
           <span className='text-lg px-10'>Our herbal products are crafted using only the finest natural ingredients. We source our herbs from trusted, sustainable farms that adhere to the highest standards of organic farming. This ensures that every product is pure, potent, and free from harmful chemicals.</span>
         </div>
-      </div>
-      <img className='rounded-r-md inline-block w-96' src={med} alt="" />
+      </motion.div>
+      <motion.img initial='hidden' whileInView='visible' variants={textVariants} transition={{duration:0.5}} className='rounded-r-md inline-block w-96' src={med} alt="" />
     </div>
   )
 }
