@@ -1,25 +1,30 @@
-import React from 'react'
-import Navbar from './components/Navbar'
-import Home from './components/Home'
-import Card from './components/Card'
-import Services from './components/Services'
-import Product from './components/Product'
-import Footer from './components/Footer'
-import Soap from './components/Soap'
-import Juice from './components/Juice'
+import React,{useEffect,useCallback,lazy,Suspense} from 'react'
+const Navbar=lazy(()=>import('./components/Navbar'))
+const Footer=lazy(()=>import('./components/Footer'))
+import { Outlet } from 'react-router-dom'
+const Helpdesk=lazy(()=>import('./components/Helpdesk'))
+import throttle from 'lodash/throttle';
+
+// const handleScroll = useCallback(
+//   throttle(() => {
+//     console.log('Scroll event triggered');
+//   }, 200), []
+// );
+
+// useEffect(() => {
+//   window.addEventListener('scroll', handleScroll);
+
+//   return () => window.removeEventListener('scroll', handleScroll);
+// }, [handleScroll]);
 
 function App() {
   return (
-    <div className='overflow-x-hidden'>
+    <Suspense fallback=''>
       <Navbar/>
-      <Home/>
-      <Card/>
-      <Services/>
-      <Product/>
-      <Soap/>
-      <Juice/>
+      <Outlet/>
+      <Helpdesk/>
       <Footer/>
-    </div>
+    </Suspense>
   )
 }
 

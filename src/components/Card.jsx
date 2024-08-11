@@ -1,27 +1,29 @@
 import React from 'react'
 import med from '../assets/med.jpeg'
-import line from '../assets/line.png'
-import {motion} from 'framer-motion'
+import line from '../assets/icons/line.png'
+import {easeIn, easeInOut, motion} from 'framer-motion'
 
 function Card() {
   const textVariants = {
-    hidden: { opacity: 0, x:-200},
-    visible: { opacity: 1, x:0}
+    hidden: { opacity: 0, scale:0},
+    visible: { opacity: 1, scale:1}
   }
 
   return (
-    <div className='flex justify-center my-10 mx-20'>
-      <motion.div initial='hidden' whileInView='visible' variants={textVariants} transition={{duration:0.5}} className='bg-pink-500 rounded-l-md py-5 pl-10 pr-20 flex flex-col justify-center invert'>
-        <div>
-          <img className='w-7 pb-3 inline-block' src={line} alt="" />
-          <span className='pl-3 text-2xl font-semibold'>Why choose us!</span>
+    <motion.div initial='hidden' whileInView='visible' variants={textVariants} transition={{duration:0.4, ease:'easeInOut',delay:0.3}}>
+    <div className='flex justify-center my-2 sm:my-10 mx-2 md:mx-10 lg:mx-20'>
+      <div className='bg-green-500 rounded-l-md py-3 px-2 lg:pr-10 flex flex-col justify-center'>
+        <div className='pl-2'>
+          <img loading='lazy' className='w-7 pb-2 invert inline-block' src={line} alt="" />
+          <span className='lg:pl-3 text-white text-2xl font-semibold'>Why choose us!</span>
         </div>
-        <div className='flex '>
-          <span className='text-lg px-10'>Our herbal products are crafted using only the finest natural ingredients. We source our herbs from trusted, sustainable farms that adhere to the highest standards of organic farming. This ensures that every product is pure, potent, and free from harmful chemicals.</span>
+        <div className='flex'>
+          <span className='text-white text-base sm:text-lg px-2 lg:px-10'>Our herbal products are crafted using only the finest natural ingredients. We source our herbs from trusted, sustainable farms that adhere to the highest standards of organic farming.<span className='hidden sm:inline'> This ensures that every product is pure, potent, and free from harmful chemicals.</span></span>
         </div>
-      </motion.div>
-      <motion.img initial='hidden' whileInView='visible' variants={textVariants} transition={{duration:0.5}} className='rounded-r-md inline-block w-96' src={med} alt="" />
+      </div>
+      <img loading='lazy' className='rounded-r-md object-cover inline-block w-48 md:w-96' src={med} alt="" />
     </div>
+    </motion.div>
   )
 }
 

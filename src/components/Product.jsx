@@ -5,8 +5,12 @@ import neem from '../assets/neem.jpg'
 import turmeric from '../assets/turmeric.jpg'
 import bitter from '../assets/bitter.jpeg'
 import {motion} from 'framer-motion'
+import link from '../assets/icons/link.png'
+import { useNavigate } from 'react-router-dom'
 
 function Product() {
+  const navigate=useNavigate()
+
   const list = [
     {
       title:'Aloe Vera',
@@ -44,17 +48,18 @@ function Product() {
   }
 
   return (
-    <>
+    <div className='overflow-x-hidden'>
       {list.map((item,key)=>(
-        <motion.div initial='hidden' whileInView='visible' variants={key % 2 === 0 ? textVariants : textVariants1} transition={{duration:1}} key={key} className={`rounded-full my-5 mx-10 bg-gradient-to-r flex ${key%2==0?'flex-row-reverse rounded-md':''} from-green-400 to-white`}>
-          <img className='shadow-lg rounded-full w-96' src={item.image} alt="" />
-          <div className='p-5 '>
-            <p className='text-4xl pb-2 font-semibold'>{item.title}</p>
-            <p className='text-xl'>{item.desc}</p>
+        <motion.div initial='hidden' whileInView='visible' variants={key % 2 === 0 ? textVariants : textVariants1} transition={{duration:0.5,delay:0.5}} key={key} className={`my-3 sm:my-5 mx-2 md:mx-5 lg:mx-10 bg-gradient-to-r flex ${key%2==0?'flex-row-reverse rounded-l sm:rounded-r-full':'sm:rounded-l-full rounded-r'} from-green-400 to-white`}>
+          <img loading='lazy' className='shadow-lg object-cover rounded-full hidden sm:block aspect-[3/2] sm:w-48 lg:w-96' src={item.image} alt="product" />
+          <div className='p-2 sm:p-5'>
+            <p className='text-2xl sm:text-3xl md:text-4xl pb-2 font-semibold'>{item.title}</p>
+            <p className='text-base sm:text-lg md:text-xl'>{item.desc}</p>
           </div>
         </motion.div>
       ))}
-    </>
+      <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:1,delay:0.5}} onClick={()=>navigate('/product')} className='hover:underline my-2 sm:my-5 cursor-pointer text-blue-600 font-serif text-lg flex justify-center'><img loading='lazy' className='w-4 h-4 mr-2 mt-[6px]' src={link} alt="link" />Read more &gt;&gt;</motion.span>
+    </div>
   )
 }
 

@@ -1,56 +1,88 @@
 import React from 'react'
-import aelojuice from '../assets/aelojuice.jpeg'
-import basil from '../assets/basil.jpeg'
-import ginger from '../assets/ginger.jpeg'
-import mint from '../assets/mint.jpeg'
+import aelojuice from '../assets/juice/aelojuice.jpeg'
+import basil from '../assets/juice/basil.jpeg'
+import ginger from '../assets/juice/ginger.jpeg'
+import mint from '../assets/juice/mint.jpeg'
+import j1 from '../assets/juice/j1.jpeg'
+import j2 from '../assets/juice/j2.jpeg'
+import j3 from '../assets/juice/j3.jpeg'
+import j4 from '../assets/juice/j4.jpeg'
+import j5 from '../assets/juice/j5.jpeg'
+import j6 from '../assets/juice/j6.jpeg'
 import {motion} from 'framer-motion'
+import ProCard from './ProCard'
+import link from '../assets/icons/link.png'
+import { useNavigate } from 'react-router-dom'
 
 function Juice() {
-  const textVariants = {
-    hidden: { opacity: 0, y:-50},
-    visible:{opacity: 1, y:0, transition:{staggerChildren:0.1}}
-  }
+  const navigate=useNavigate()
+
   const heading ={
-    hidden:{opacity:0,y:-50},
-    visible:{opacity:1,y:0,transition:{delay:0.5, duration:0.5}}
+    hidden:{opacity:0,scale:0},
+    visible:{opacity:1,scale:1,transition:{delay:0.5, duration:0.5}}
   }
   const juice = [
     {
       title:'Aloe Vera',
       image:aelojuice,
-      desc:'Aloe vera juice is made from the gel of the aloe vera plant. It is known for its soothing and hydrating properties, and it can aid in digestion, support immune function, and promote healthy skin.'
+      price:'49.00'
     },
     {
-      title:'Ginger-Turmeric',
+      title:'Ginger Turmeric',
       image:ginger,
-      desc:"Ginger and turmeric juice combines the anti-inflammatory and antioxidant properties of powerful roots."
+      price:"19.00"
     },
     {
-      title:'Mint-Lemon',
+      title:'Mint Lemon',
       image:mint,
-      desc:'Mint and lemon juice is a refreshing and cooling drink, perfect for hot weather. Mint aids in digestion and has a calming effect.'
+      price:'19.00'
     },
     {
       title:'Holy Basil',
       image:basil,
-      desc:'Holy basil, also known as tulsi, is revered in Ayurvedic medicine for its adaptogenic properties. Tulsi juice can help manage stress, boost immunity, and promote respiratory health.'
+      price:'39.00'
+    },
+    {
+      title:'Aloe Vera',
+      image:j1,
+      price:'49.00'
+    },
+    {
+      title:'Ginger Turmeric',
+      image:j2,
+      price:"29.00"
+    },
+    {
+      title:'Mint Lemon',
+      image:j3,
+      price:'19.00'
+    },
+    {
+      title:'Holy Basil',
+      image:j4,
+      price:'39.00'
+    },
+    {
+      title:'Aloe Vera',
+      image:j5,
+      price:'29.00'
+    },
+    {
+      title:'Ginger Turmeric',
+      image:j6,
+      price:"21.00"
     },
   ]
 
   return (
     <>
-      <motion.h1 initial='hidden' whileInView='visible' variants={heading} transition={{duration:0.5}} className='text-3xl my-10 font-semibold flex justify-center'>Herbel Juices</motion.h1>
-      <motion.div initial='hidden' whileInView='visible' variants={textVariants} className='flex justify-center items-center gap-5'>
+      <motion.h1 initial='hidden' whileInView='visible' variants={heading} transition={{duration:0.2,delay:0.2}} className='sm:text-3xl my-4 text-2xl sm:my-10 font-semibold flex justify-center'>Herbel Juices</motion.h1>
+      <div className='mx-2 sm:mx-5 md:mx-10 flex overflow-x-auto sm:grid sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-5'>
       {juice.map((item,key)=>(
-          <motion.div variants={textVariants} key={key} className={`shadow-xl rounded-md border-2 w-1/5 border-green-500 p-3`}>
-            <img className='w-full rounded-md' src={item.image} alt="" />
-            <div className=''>
-              <p className='text-2xl py-1 font-semibold'>{item.title}</p>
-              <p className='text-lg'>{item.desc}</p>
-            </div>
-          </motion.div>
+        <ProCard className='flex-shrink-0 w-auto' key={key} image={item.image} title={item.title} price={item.price}/>
       ))}
-      </motion.div>
+      </div>
+      <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:1,delay:0.5}} onClick={()=>navigate('/')} className='hover:underline cursor-pointer text-blue-600 font-serif text-base sm:text-lg my-3 sm:my-5 flex justify-center'><img loading='lazy' className='w-4 h-4 mr-2 mt-[3px] sm:mt-[6px]' src={link} alt="link" />Explore &gt;&gt;</motion.span>
     </>
   )
 }

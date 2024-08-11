@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-cont {
+  position: relative;
+  background-image: url('./assets/hero.jpg');
+  background-size: cover;
+}
+.bg-cont::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(225, 225, 225, 0.2);
+}
+#newsletter{
+  background-image: url("/src/assets/newsletter.png");
+    background-position: 20% 30%;
+    background-color: #041e42;
+}
+#footer {
+  font-size: 12px ;
+}
+#marquee{
+  animation: marquee 10s linear infinite;
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
