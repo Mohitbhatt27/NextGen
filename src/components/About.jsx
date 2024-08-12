@@ -37,10 +37,10 @@ function About() {
 
   return (
     <div>
-      <motion.img loading='eager' initial={{opacity:0,y:-100}} whileInView={{opacity:1,y:0}} transition={{duration:0.5}} className='mt-[60px] mb-20' src={about} alt="" />
+      <motion.img loading='eager' initial={{opacity:0,y:-100}} whileInView={{opacity:1,y:0}} transition={{duration:0.5}} className='mt-[60px] mb-5 sm:mb-20' src={about} alt="" />
       {list.map((item,id)=>{
         return ( 
-            <div key={id} className={`flex items-center mt-5 px-3 sm:mx-5 md:mx-10 gap-3 md:gap-15 ${id%2==0?'flex-row-reverse':''} `}>
+            <div key={id} className={`flex flex-col md:flex-row items-center mt-5 px-3 sm:mx-5 md:mx-10 gap-3 md:gap-15 ${id%2==0?'md:flex-row-reverse':''} `}>
               <motion.img initial={{opacity:0,scale:0}} whileInView={{opacity:1,scale:1}} transition={{duration:0.3,delay:0.3}} className='border-1 border-emerald-600 w-1/3 md:w-1/4 rounded-xl' loading='lazy' src={item.img} alt="image" />
               <motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:0.3,delay:0.5}} className='flex flex-col justify-center items-center'>
                 <p className='text-base sm:text-xl font-semibold'>{item.title}</p>

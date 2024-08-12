@@ -9,8 +9,8 @@ function Services() {
 
   return (
     <motion.div initial='hidden' whileInView='visible' variants={textVariants} transition={{duration:0.5}} className='flex justify-center my-4 sm:my-10 flex-col items-center'>
-      <span className='text-green-700 font-semibold'>Authenticy certified!</span>
-      <span className='text-3xl tracking-widest font-semibold'>100% HERBAL</span>
+      <span className='text-sm md:text-base text-green-700 font-semibold'>Authenticy certified!</span>
+      <span className='text-xl md:text-3xl tracking-widest font-semibold'>100% HERBAL</span>
     </motion.div>
   )
 }

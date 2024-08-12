@@ -35,7 +35,7 @@ function Contact() {
 
   return (
     <div className='md:flex justify-around'>
-        <motion.div initial='hidden' whileInView='visible' variants={textVariants} className='flex mt-16 sm:mt-20 ml-3 md:ml-10 md:pb-20 pt-20 flex-col gap-2 justify-center '>
+        <motion.div initial='hidden' whileInView='visible' variants={textVariants} className='flex mt-[60px] sm:mt-20 ml-3 md:ml-10 md:pb-20 pt-10 flex-col gap-2 justify-center '>
           <p>GET IN TOUCH</p>
           <p className='font-bold mb-2 text-xl sm:text-2xl'>Visit one of our agency locations or contact us today</p>
           <p className='text-base font-semibold'>Head Office</p>

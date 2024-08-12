@@ -16,14 +16,11 @@ function Brands() {
     <>
       <div className='overflow-x-hidden'>
         <motion.p initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:0.5,delay:0.3}} className='font-bold text-2xl ml-5 sm:ml-12 mt-3 sm:mt-5'>Our Sponsers:</motion.p>
-        <div id='marquee' className=' flex gap-5 py-4 sm:py-5'>
+        <marquee behavior="scroll" direction="left" loop='infinite' className='flex py-5'>
         {
-          list.map((item,id)=><img loading='lazy' id={id} className='h-20 object-contain aspect-video' src={item} alt='brand'/>)
+          list.map((item,id)=><img loading='lazy' id={id} className='h-20 inline gap-3 object-contain aspect-video' src={item} alt='brand'/>)
         }
-        {
-          list.map((item,id)=><img loading='lazy' id={`duplicate-${id}`} className='w-36 aspect-video' src={item} alt='brand'/>)
-        }
-        </div>
+        </marquee>
       </div>
     </>
   )
