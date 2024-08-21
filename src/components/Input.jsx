@@ -59,7 +59,7 @@ const AutoComplete = () => {
     <div>
       <input
         type="text"
-        className='p-1 bg-inherit px-2 text-lg font-normal outline-none rounded-lg border-2 border-green-500'
+        className='p-1 font-nunito bg-inherit px-2 text-lg font-normal outline-none rounded-lg border-2 border-green-500'
         value={inputValue}
         onChange={handleChange}
         placeholder="Search here..."
@@ -67,7 +67,7 @@ const AutoComplete = () => {
       {suggestions.length > 0 && (
         <ul className='absolute font-normal text-lg'>
           {suggestions.map((item, id) => (
-            <li className='hover:text-green-600'
+            <li className='hover:text-green-600 font-nunito'
               key={id}
               onClick={() => handleSelect(item)}
               style={{ 

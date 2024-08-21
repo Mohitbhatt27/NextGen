@@ -6,6 +6,12 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        raleway: ['raleway','sans-serif'],
+        nunito: ['nunito','sans-serif'],
+        merriweather: ['merriweather','sans-serif'],
+        quicksand: ['quicksand','sans-serif'],
+      },
     },
   },
   plugins: [],

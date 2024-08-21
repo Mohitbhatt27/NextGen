@@ -43,8 +43,8 @@ function About() {
             <div key={id} className={`flex flex-col md:flex-row items-center mt-5 px-3 sm:mx-5 md:mx-10 gap-3 md:gap-15 ${id%2==0?'md:flex-row-reverse':''} `}>
               <motion.img initial={{opacity:0,scale:0}} whileInView={{opacity:1,scale:1}} transition={{duration:0.3,delay:0.3}} className='border-1 border-emerald-600 w-1/3 md:w-1/4 rounded-xl' loading='lazy' src={item.img} alt="image" />
               <motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:0.3,delay:0.5}} className='flex flex-col justify-center items-center'>
-                <p className='text-base sm:text-xl font-semibold'>{item.title}</p>
-                <p className='text-base sm:text-lg'>{item.desc}</p>
+                <p className='text-base font-nunito sm:text-xl font-semibold'>{item.title}</p>
+                <p className='text-base font-nunito sm:text-lg'>{item.desc}</p>
               </motion.div>
             </div>
       )})}
