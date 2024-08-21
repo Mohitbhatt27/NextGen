@@ -19,30 +19,30 @@ function Footer() {
     <div className='ml-2 sm:ml-14 mb-2'>
       <img loading='lazy' className='w-8 mb-2  inline-block' src={logo1} alt="" /><span className='font-bold text-xl'>NextGen</span>
     </div>
-    <motion.div initial='hidden' whileInView='visible' variants={textVariants} className='px-2 font-quicksand sm:px-16 grid grid-cols-3 sm:grid-cols-4 sm:pb-10 gap-2 sm:gap-5'>
+    <motion.div id='footerDiv' initial='hidden' whileInView='visible' variants={textVariants} className='px-2 font-quicksand sm:px-16 grid grid-cols-3 sm:grid-cols-4 sm:pb-10 gap-2 sm:gap-5'>
       <div>
         <div>
           <p className='mb-1 text-base sm:text-lg font-bold'>Contact</p>
-          <p className='text-sm'><span className='font-bold'>Address:</span> Wellington Road, Street 32, San Francisco</p>
-          <p className='text-sm'><span className='font-bold'>Phone:</span> +01 2222 365 / (+91) 01 2345 6789</p>
-          <p className='text-sm'><span className='font-bold'>Hours:</span> 10:00 - 18:00, Mon - Sat</p>
+          <p className='md:text-sm'><span className='font-bold'>Address:</span> Wellington Road, Street 32, San Francisco</p>
+          <p className='md:text-sm'><span className='font-bold'>Phone:</span> +01 2222 365 / (+91) 01 2345 6789</p>
+          <p className='md:text-sm'><span className='font-bold'>Hours:</span> 10:00 - 18:00, Mon - Sat</p>
         </div>
       </div>
       <div>
         <p className='mb-1 text-base sm:text-lg font-bold'>About</p>
-        <p className='text-sm cursor-pointer hover:underline hover:text-blue-700'>About us</p>
-        <p className='text-sm cursor-pointer hover:underline hover:text-blue-700'>Delivery Information</p>
-        <p className='text-sm cursor-pointer hover:underline hover:text-blue-700'>Privacy Policy</p>
-        <p className='text-sm cursor-pointer hover:underline hover:text-blue-700'>Terms & Conditions</p>
-        <p className='text-sm cursor-pointer hover:underline hover:text-blue-700'>Contact Us</p>
+        <p className='md:text-sm'>About us</p>
+        <p className='md:text-sm'>Delivery Information</p>
+        <p className='md:text-sm'>Privacy Policy</p>
+        <p className='md:text-sm'>Terms & Conditions</p>
+        <p className='md:text-sm'>Contact Us</p>
       </div>
       <div className='hidden sm:block'>
         <p className='mb-1 text-base sm:text-lg font-bold'>My Account</p>
-        <p className='text-sm cursor-pointer hover:underline hover:text-blue-700'>Sign Up</p>
-        <p className='text-sm cursor-pointer hover:underline hover:text-blue-700'>View Cart</p>
-        <p className='text-sm cursor-pointer hover:underline hover:text-blue-700'>My Wishlist</p>
-        <p className='text-sm cursor-pointer hover:underline hover:text-blue-700'>Track my order</p>
-        <p className='text-sm cursor-pointer hover:underline hover:text-blue-700'>Help</p>
+        <p className='md:text-sm'>Sign Up</p>
+        <p className='md:text-sm'>View Cart</p>
+        <p className='md:text-sm'>My Wishlist</p>
+        <p className='md:text-sm'>Track my order</p>
+        <p className='md:text-sm'>Help</p>
       </div>
       <div>
       <p className='mb-1 text-base sm:text-lg font-bold'>Install App</p>

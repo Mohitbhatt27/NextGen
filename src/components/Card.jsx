@@ -22,7 +22,7 @@ function Card() {
             <span className='font-nunito text-white text-base sm:text-lg px-2 lg:px-10'>Our herbal products are crafted using only the finest natural ingredients. We source our herbs from trusted, sustainable farms that adhere to the highest standards of organic farming.<span className='hidden sm:inline'> This ensures that every product is pure, potent, and free from harmful chemicals.</span></span>
           </div>
         </div>
-        <img loading='lazy' className='rounded-r-md rounded-l-md lg:rounded-l-none object-cover absolute right-5 -top-8 sm:-top-16 lg:relative lg:top-0 lg:right-0 w-32 sm:w-48 aspect-video lg:aspect-auto lg:w-[355px] xl:w-[270px]' src={med} alt="" />
+        <img loading='lazy' className='rounded-r-md rounded-l-md lg:rounded-l-none object-cover absolute right-2 -top-8 sm:-top-16 lg:relative lg:top-0 lg:right-0 w-32 sm:w-48 aspect-video lg:aspect-auto lg:w-[355px] xl:w-[270px]' src={med} alt="" />
       </div>
     </div>
     </motion.div>

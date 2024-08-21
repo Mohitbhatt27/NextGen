@@ -32,7 +32,7 @@ function Navbar() {
               <img loading="lazy" className="w-7" src={menu} alt="menu" />
             )}
           </div>
-          <ul onClick={handleHam} className={`absolute sm:static top-16 right-0 z-10 flex flex-col sm:flex-row sm:gap-4 gap-2 ${ham ?'flex bg-black/70 text-white px-4 py-1 rounded-lg' :'hidden sm:flex'}`}>
+          <ul onClick={handleHam} className={`absolute sm:static top-16 right-0 z-10 flex flex-col sm:flex-row sm:gap-4 gap-2 ${ham ?'flex bg-black/70 text-white px-7 py-5 rounded-lg' :'hidden sm:flex'}`}>
           {list.map((item,id)=>{
             return <NavLink key={id} to={item.path} className={({isActive})=>`${isActive?'text-emerald-600':''} text-lg font-bold sm:text-xl font-quicksand hover:text-emerald-600`}>{item.name}</NavLink>
           })}

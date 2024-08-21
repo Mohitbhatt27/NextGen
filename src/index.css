@@ -21,6 +21,14 @@
 #footer {
   font-size: 12px ;
 }
+#footerDiv p{
+  cursor: pointer;
+}
+#footerDiv p:hover{
+  text-decoration: underline;
+  color: blue;
+}
+
 #marquee{
   animation: marquee 10s linear infinite;
 }
