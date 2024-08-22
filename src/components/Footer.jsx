@@ -21,14 +21,14 @@ function Footer() {
     </div>
     <motion.div id='footerDiv' initial='hidden' whileInView='visible' variants={textVariants} className='px-2 font-quicksand sm:px-16 grid grid-cols-3 sm:grid-cols-4 sm:pb-10 gap-2 sm:gap-5'>
       <div>
-        <div>
+        <div className='flex flex-col gap-1'>
           <p className='mb-1 text-base sm:text-lg font-bold'>Contact</p>
           <p className='md:text-sm'><span className='font-bold'>Address:</span> Wellington Road, Street 32, San Francisco</p>
           <p className='md:text-sm'><span className='font-bold'>Phone:</span> +01 2222 365 / (+91) 01 2345 6789</p>
           <p className='md:text-sm'><span className='font-bold'>Hours:</span> 10:00 - 18:00, Mon - Sat</p>
         </div>
       </div>
-      <div>
+      <div className='flex flex-col gap-1'>
         <p className='mb-1 text-base sm:text-lg font-bold'>About</p>
         <p className='md:text-sm'>About us</p>
         <p className='md:text-sm'>Delivery Information</p>
@@ -36,7 +36,7 @@ function Footer() {
         <p className='md:text-sm'>Terms & Conditions</p>
         <p className='md:text-sm'>Contact Us</p>
       </div>
-      <div className='hidden sm:block'>
+      <div className='hidden sm:flex flex-col gap-1'>
         <p className='mb-1 text-base sm:text-lg font-bold'>My Account</p>
         <p className='md:text-sm'>Sign Up</p>
         <p className='md:text-sm'>View Cart</p>
@@ -44,9 +44,9 @@ function Footer() {
         <p className='md:text-sm'>Track my order</p>
         <p className='md:text-sm'>Help</p>
       </div>
-      <div>
+      <div className='flex flex-col gap-1'>
       <p className='mb-1 text-base sm:text-lg font-bold'>Install App</p>
-      <p className='text-sm'>From App Store or Google Play</p>
+      <p className='md:text-sm'>From App Store or Google Play</p>
       <div className='-ml-5 sm:flex mix-blend-multiply'>
         <img loading='lazy' className='w-full cursor-pointer sm:w-1/2' src={app} alt="img" />
         <img loading='lazy' className='w-full cursor-pointer sm:w-1/2' src={play} alt="img" />
@@ -54,7 +54,7 @@ function Footer() {
       <img loading='lazy' className='mix-blend-multiply cursor-pointer sm:mt-2 sm:ml-2' src={pay} alt="" />
       </div>
     </motion.div>
-    <div className='text-sm flex justify-center mb-1 mt-4 font-semibold'>
+    <div className='md:text-sm flex justify-center mb-1 mt-4 font-semibold'>
       All rights reserved. Copyright © 2024 - NextGen!
     </div>
     </div>
