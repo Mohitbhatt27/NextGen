@@ -11,6 +11,7 @@ import Login from './components/Login.jsx'
 import SignUp from './components/SignUp.jsx'
 import './index.css'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
+import { Auth0Provider } from '@auth0/auth0-react';
 
 const router=createBrowserRouter(
   createRoutesFromElements(
@@ -28,5 +29,13 @@ const router=createBrowserRouter(
 )
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router}/>
+  <Auth0Provider
+    domain="dev-atvz1zj76jo2minq.us.auth0.com"
+    clientId="WeCAZo2lZplhY8BA4AL56dQzop7NWeXN"
+    authorizationParams={{
+      redirect_uri: window.location.origin
+    }}
+  >
+    <RouterProvider router={router}/>
+  </Auth0Provider>
 )

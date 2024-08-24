@@ -11,3 +11,8 @@ debouncing on input
 throttling on scroll
 lazy loading and suspence on import/image
 framer motion animation
+OAuth 2.0
+otp authentication
+authentication authorization
+google integration
+matching fonts

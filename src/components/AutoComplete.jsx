@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import SuggestList from './suggestion'
 import Input from './Input.jsx';
+import search from '../assets/icons/search.png'
 
 const AutoComplete = () => {
   const [inputValue, setInputValue] = useState('');
@@ -58,7 +59,8 @@ const AutoComplete = () => {
 
   return (
     <div>
-      <Input className={` border-2 border-red-500`} placeholder='Search here...' />
+      {/* <img className='w-7' src={search} alt="" /> */}
+      {/* <Input className='p-1 font-nunito bg-inherit px-2 text-lg font-normal outline-none rounded-lg border-2 border-green-500' placeholder='Search here...' /> */}
       {suggestions.length > 0 && (
         <ul className='absolute font-normal text-lg'>
           {suggestions.map((item, id) => (
