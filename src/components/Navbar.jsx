@@ -11,6 +11,7 @@ import LoginPopup from './LoginPopup'
 import Search from './Search'
 import { useAuth0 } from "@auth0/auth0-react";
 import { useSelector } from 'react-redux'
+import search from '../assets/icons/search.png'
 
 let list=[
   {name:'Home',path:''},
@@ -74,8 +75,9 @@ function Navbar() {
           <div className='hidden xl:block'>
             <Search/>
           </div>
+          <img className='w-5 md:w-[22px] cursor-pointer xl:hidden' src={search} alt="" />
           <div onClick={()=>{userData?navigate('/product'):loginWithRedirect()}} className={`${user?'':'hover:bg-pink-500 hover:invert pb-[6px] p-2 active:bg-pink-600 rounded-md '} flex mb-1 justify-center items-center gap-2`}>
-            {user?.picture?<img className='w-8 cursor-pointer rounded-full' onClick={()=>navigate('/profile')} src={user.picture}/>:<img className='cursor-pointer w-5 md:w-6' src={profile}/>}
+            {user?.picture?<img className='w-8 cursor-pointer rounded-full' src={user.picture}/>:<img className='cursor-pointer w-5 md:w-6' src={profile}/>}
             {user?'':<span className='text-base md:text-lg font-quicksand font-semibold -mb-1'>Login</span>}
           </div>
           {visible && <AnimatePop initial={{scale:0}} animate={{scale:1}} className={`animate-bounce duration-100 absolute top-16 right-0 md:right-[95px] drop-shadow-md`}/>}
