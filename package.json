@@ -12,7 +12,6 @@
   "dependencies": {
     "@auth0/auth0-react": "^2.2.4",
     "@reduxjs/toolkit": "^2.2.7",
-    "auth0-react": "^3.1.0",
     "framer-motion": "^11.2.12",
     "lodash": "^4.17.21",
     "react": "^18.3.1",
