@@ -78,7 +78,7 @@ function Navbar() {
             {user?.picture?<img className='w-8 cursor-pointer rounded-full' onClick={()=>navigate('/profile')} src={user.picture}/>:<img className='cursor-pointer w-6' src={profile}/>}
             {user?'':<span className='text-lg font-quicksand font-semibold -mb-1'>Login</span>}
           </div>
-          {visible && <AnimatePop initial={{scale:0}} animate={{scale:1}} className={`animate-bounce duration-100 absolute top-16 right-[95px] drop-shadow-md`}/>}
+          {visible && <AnimatePop initial={{scale:0}} animate={{scale:1}} className={`animate-bounce duration-100 absolute top-16 right-0 md:right-[95px] drop-shadow-md`}/>}
           <img onClick={()=>navigate('cart')} className='cursor-pointer  hidden md:block w-[26px]' src={cart} alt="cart" />
         </div>
       </div>
