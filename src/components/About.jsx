@@ -8,6 +8,7 @@ import link from '../assets/icons/link.png'
 import { useNavigate } from 'react-router-dom'
 import Newsletter from './Newsletter'
 import {motion} from 'framer-motion'
+import Counter from './Counter'
 
 let list=[
   {
@@ -37,7 +38,8 @@ function About() {
 
   return (
     <div>
-      <motion.img loading='eager' initial={{opacity:0,y:-100}} whileInView={{opacity:1,y:0}} transition={{duration:0.5}} className='mt-[60px] mb-5 sm:mb-20' src={about} alt="" />
+      <motion.img loading='eager' initial={{opacity:0,y:-100}} whileInView={{opacity:1,y:0}} transition={{duration:0.5}} className='mt-[58px] ' src={about} alt="" />
+      <Counter/>
       {list.map((item,id)=>{
         return ( 
             <div key={id} className={`flex flex-col md:flex-row items-center mt-5 px-3 sm:mx-5 md:mx-10 gap-3 md:gap-15 ${id%2==0?'md:flex-row-reverse':''} `}>

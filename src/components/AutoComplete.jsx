@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import SuggestList from './suggestion'
 import Input from './Input.jsx';
 import search from '../assets/icons/search.png'
@@ -6,6 +6,13 @@ import search from '../assets/icons/search.png'
 const AutoComplete = () => {
   const [inputValue, setInputValue] = useState('');
   const [suggestions, setSuggestions] = useState([]);
+
+  const inputRef=useRef(null)
+  const focusInput = () => {
+    if (inputRef.current) {
+      inputRef.current.focus();  // Accessing the input element directly
+    }
+  }
 
   const debounce = (func, delay) => {
     let timer;
@@ -59,9 +66,9 @@ const AutoComplete = () => {
 
   return (
     <div>
-      {/* <img className='w-7' src={search} alt="" /> */}
-      {/* <Input className='p-1 font-nunito bg-inherit px-2 text-lg font-normal outline-none rounded-lg border-2 border-green-500' placeholder='Search here...' /> */}
-      {suggestions.length > 0 && (
+      <img className='w-7' src={search} alt="" />
+      <Input className='p-1 font-nunito bg-inherit px-2 text-lg font-normal outline-none rounded-lg border-2 border-green-500' id='search' ref={inputRef} placeholder='Search here...' />
+      {/* {suggestions.length > 0 && (
         <ul className='absolute font-normal text-lg'>
           {suggestions.map((item, id) => (
             <li className='hover:text-green-600 font-nunito'
@@ -77,7 +84,8 @@ const AutoComplete = () => {
             </li>
           ))}
         </ul>
-      )}
+      )} */}
+      <button onClick={focusInput}>click</button>
     </div>
   );
 };

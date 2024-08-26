@@ -8,8 +8,6 @@ import Input from './Input'
 function SignUp() {
   const {register,handleSubmit,formState:{errors}} = useForm()
   const navigate=useNavigate()
-// logic
-// dropshadow
 
   function handleSignup(data){
     console.log(data)

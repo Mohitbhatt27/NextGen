@@ -7,11 +7,12 @@ import ProductPage from './pages/Product.jsx'
 import ContactPage from './pages/Contact.jsx'
 import Cart from './components/Cart.jsx'
 import Profile from './components/Profile.jsx'
-import Login from './components/Login.jsx'
 import SignUp from './components/SignUp.jsx'
 import './index.css'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import { Auth0Provider } from '@auth0/auth0-react';
+import { Provider } from 'react-redux'
+import store from './Redux/store.js'
 
 const router=createBrowserRouter(
   createRoutesFromElements(
@@ -19,7 +20,6 @@ const router=createBrowserRouter(
       <Route path='' element={<Home/>}/>
       <Route path='cart' element={<Cart/>}/>
       <Route path='profile' element={<Profile/>}/>
-      <Route path='login' element={<Login/>}/>
       <Route path='signup' element={<SignUp/>}/>
       <Route path='about' element={<AboutPage/>}/>
       <Route path='product' element={<ProductPage/>}/>
@@ -36,6 +36,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       redirect_uri: window.location.origin
     }}
   >
-    <RouterProvider router={router}/>
+    <Provider store={store}>
+      <RouterProvider router={router}/>
+    </Provider>
   </Auth0Provider>
 )

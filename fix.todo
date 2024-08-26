@@ -1,0 +1,4 @@
+add throttle
+add signup
+add logout
+if auth=true show profile (protected route)

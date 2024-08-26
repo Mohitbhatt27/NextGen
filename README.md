@@ -16,3 +16,4 @@ otp authentication
 authentication authorization
 google integration
 matching fonts
+protected routes

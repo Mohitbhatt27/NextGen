@@ -22,11 +22,7 @@
   font-size: 12px ;
 }
 #footerDiv p{
-  cursor: pointer;
-}
-#footerDiv p:hover{
-  text-decoration: underline;
-  color: blue;
+  cursor: default;
 }
 
 #marquee{
