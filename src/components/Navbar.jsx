@@ -76,9 +76,9 @@ function Navbar() {
             <Search/>
           </div>
           <img className='w-5 md:w-[22px] cursor-pointer xl:hidden' src={search} alt="" />
-          <div onClick={()=>{userData?navigate('/product'):loginWithRedirect()}} className={`${user?'':'hover:bg-pink-500 hover:invert pb-[6px] p-2 active:bg-pink-600 rounded-md '} flex mb-1 justify-center items-center gap-2`}>
+          <div onClick={()=>{userData?navigate('/profile'):loginWithRedirect()}} className={`${user?'':'hover:bg-pink-500 hover:invert p-[6px] active:bg-pink-600 rounded-md '} flex justify-center items-center gap-2`}>
             {user?.picture?<img className='w-8 cursor-pointer rounded-full' src={user.picture}/>:<img className='cursor-pointer w-5 md:w-6' src={profile}/>}
-            {user?'':<span className='text-base md:text-lg font-quicksand font-semibold -mb-1'>Login</span>}
+            {user?'':<span className='text-base md:text-lg font-quicksand font-semibold '>Login</span>}
           </div>
           {visible && <AnimatePop initial={{scale:0}} animate={{scale:1}} className={`animate-bounce duration-100 absolute top-16 right-0 md:right-[95px] drop-shadow-md`}/>}
           <img onClick={()=>navigate('cart')} className='cursor-pointer  hidden md:block w-[26px]' src={cart} alt="cart" />

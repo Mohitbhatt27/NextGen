@@ -19,18 +19,18 @@ import {login,logout} from './Redux/authSlice'
 // }, [handleScroll]);
 
 function App() {
-  const {user,isAuthenticated}=useAuth0()
+  const {user,isAuthenticated,isLoading}=useAuth0()
   const dispatch=useDispatch()
 
-  console.log(user)
   useEffect(()=>{
-    if(isAuthenticated){
+    if(!isLoading && isAuthenticated && user){
       dispatch(login(user))
     }else{
       dispatch(logout())
     }
-  },[])
+  },[isLoading,isAuthenticated,user])
 
+  if(isLoading) return <p>Loading...</p>
   return (
     <Suspense fallback=''>
       <Navbar/>

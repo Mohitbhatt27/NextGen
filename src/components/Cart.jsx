@@ -11,7 +11,7 @@ function Cart() {
     welcome {user.email}
     </>:<>
       <div className='p-10 flex justify-center items-center'>
-      <div className='rounded-md bg-white drop-shadow-lg w-1/2 mt-10 flex flex-col m-auto p-10'>
+      <div className='rounded-md bg-white drop-shadow-lg w-1/2 mt-10 flex flex-col m-auto p-10 pb-7'>
         <img loading='lazy' className='w-56 m-auto mb-5' src={missingCart} alt="" />
         <span className='text-lg text-center'>Missing Cart items?</span>
         <span className='text-md text-center'>Login to see the items you added previously</span>

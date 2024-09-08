@@ -2,3 +2,4 @@ add throttle
 add signup
 add logout
 if auth=true show profile (protected route)
+https://*.example.com/callback
