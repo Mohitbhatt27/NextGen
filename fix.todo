@@ -2,4 +2,5 @@ add throttle
 add signup
 add logout
 if auth=true show profile (protected route)
+close if click outside modal - hamburger & profile
 https://*.example.com/callback

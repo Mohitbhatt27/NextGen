@@ -3,11 +3,9 @@ import logo1 from '../assets/logo1.png'
 import app from '../assets/pay/app.jpg'
 import play from '../assets/pay/play.jpg'
 import pay from '../assets/pay/pay.png'
-import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 function Footer() {
-  const navigate=useNavigate()
   
   const textVariants = {
     hidden: { opacity: 0, y:50},

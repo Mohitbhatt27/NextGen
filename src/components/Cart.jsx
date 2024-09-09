@@ -1,14 +1,16 @@
 import React from 'react'
 import missingCart from '../assets/missingCart.webp'
 import { useAuth0 } from "@auth0/auth0-react";
+import { useSelector } from 'react-redux';
 
 function Cart() {
-  const {user,loginWithRedirect}=useAuth0()
+  const {loginWithRedirect}=useAuth0()
+  const userData=useSelector(state=>state.auth.userData)
 
   return (
     <>
-    {user?<>
-    welcome {user.email}
+    {userData?<>
+    welcome {userData.email}
     </>:<>
       <div className='p-10 flex justify-center items-center'>
       <div className='rounded-md bg-white drop-shadow-lg w-1/2 mt-10 flex flex-col m-auto p-10 pb-7'>

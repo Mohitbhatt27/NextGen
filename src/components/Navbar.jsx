@@ -59,7 +59,7 @@ function Navbar() {
           <img loading='lazy' className='w-8 md:w-9' src={logo1} alt="" />
           <span className='md:pl-2 pt-1 text-lg md:text-xl font-bold'>NextGen</span>
         </NavLink>
-        <div className='flex justify-center gap-3 md:gap-6 items-center'>
+        <div className='flex justify-center gap-5 md:gap-6 items-center'>
           <div onClick={handleHam} className="sm:hidden">
             {ham ? (
               <img loading="lazy" className="w-6 md:w-7 p-1" src={close} alt="close" />
