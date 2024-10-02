@@ -52,6 +52,19 @@ function Navbar() {
     setHam(!ham)
   }
 
+  useEffect(()=>{
+    function exit(e){
+      if(!e.target.className.includes('navlist')){
+        console.log('true')
+        setHam(false)
+      }
+    }
+    document.addEventListener('click',exit)
+    return ()=>{
+      document.removeEventListener('click',exit)
+    }
+  },[setHam])
+  
   return (
     <>
       <div className='fixed top-0 z-20 w-full flex text-black justify-around items-center backdrop-blur-sm py-3 md:p-3 shadow-lg'>
@@ -69,7 +82,7 @@ function Navbar() {
           </div>
           <ul onClick={handleHam} className={`absolute sm:static top-16 right-2 z-10 flex flex-col sm:flex-row sm:gap-5 gap-1 ${ham ? 'flex bg-black/70 text-white px-7 py-5 rounded-lg sm:bg-transparent sm:text-current sm:px-0 sm:py-0 sm:rounded-none' : 'hidden sm:flex'}`}>
           {list.map((item,id)=>{
-            return <NavLink key={id} to={item.path} className={({isActive})=>`${isActive?'text-emerald-600':''} text-lg font-semibold md:text-xl font-quicksand hover:text-emerald-600`}>{item.name}</NavLink>
+            return <NavLink key={id} to={item.path} className={({isActive})=>`${isActive?'text-emerald-600':''} navlist text-lg font-semibold md:text-xl font-quicksand hover:text-emerald-600`}>{item.name}</NavLink>
           })}
           </ul>
           <div className='hidden xl:block'>
