@@ -19,9 +19,9 @@ function Herby() {
   },[navigate])
   
   return (
-    <div className="container h-screen flex justify-center items-center">
+    <div className="container sm:h-screen flex justify-center items-center">
       <iframe
-        className="chat sm:rounded shadow-lg h-screen sm:h-[500px]"
+        className="chat sm:rounded shadow-lg h-dvh sm:h-[500px]"
         allow="microphone;"
         width="400"
         src="https://console.dialogflow.com/api-client/demo/embedded/0bb6ab00-08c3-4b83-a11e-9bf552797576"
