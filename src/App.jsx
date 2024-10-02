@@ -7,6 +7,7 @@ import throttle from 'lodash/throttle';
 import { useAuth0 } from '@auth0/auth0-react'
 import { useDispatch } from 'react-redux'
 import {login,logout} from './Redux/authSlice'
+import Herby from './components/Herby'
 
 // const handleScroll = useCallback(
 //   throttle(() => {

@@ -13,6 +13,7 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import { Auth0Provider } from '@auth0/auth0-react';
 import { Provider } from 'react-redux'
 import store from './Redux/store.js'
+import Herby from './components/Herby.jsx'
 
 const router=createBrowserRouter(
   createRoutesFromElements(
@@ -24,6 +25,7 @@ const router=createBrowserRouter(
       <Route path='about' element={<AboutPage/>}/>
       <Route path='product' element={<ProductPage/>}/>
       <Route path='contact' element={<ContactPage/>}/>
+      <Route path='herby' element={<Herby/>}/>
     </Route>
   )
 )
