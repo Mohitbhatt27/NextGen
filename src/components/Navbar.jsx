@@ -52,18 +52,18 @@ function Navbar() {
     setHam(!ham)
   }
 
-  useEffect(()=>{
-    function exit(e){
-      if(!e.target.className.includes('navlist')){
-        console.log('true')
-        setHam(false)
-      }
-    }
-    document.addEventListener('click',exit)
-    return ()=>{
-      document.removeEventListener('click',exit)
-    }
-  },[setHam])
+  // useEffect(()=>{
+  //   function exit(e){
+  //     if(!e.target.className.includes('navlist')){
+  //       console.log('true')
+  //       setHam(false)
+  //     }
+  //   }
+  //   document.addEventListener('click',exit)
+  //   return ()=>{
+  //     document.removeEventListener('click',exit)
+  //   }
+  // },[setHam])
   
   return (
     <>

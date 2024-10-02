@@ -17,6 +17,7 @@ import Herby from './components/Herby.jsx'
 
 const router=createBrowserRouter(
   createRoutesFromElements(
+    <>
     <Route path='/' element={<App/>}>
       <Route path='' element={<Home/>}/>
       <Route path='cart' element={<Cart/>}/>
@@ -25,8 +26,9 @@ const router=createBrowserRouter(
       <Route path='about' element={<AboutPage/>}/>
       <Route path='product' element={<ProductPage/>}/>
       <Route path='contact' element={<ContactPage/>}/>
-      <Route path='herby' element={<Herby/>}/>
     </Route>
+    <Route path='/herby' element={<Herby/>}/>
+    </>
   )
 )
 
