@@ -13,6 +13,20 @@
   inset: 0;
   background-color: rgba(225, 225, 225, 0.2);
 }
+.navline::after{
+  content: '';
+  background-color: #3dbc68;
+  height: 2px;
+  width: 0;
+  border-radius: 50%;
+  bottom: 0;
+  left: 0;
+  transition: width 400ms ease-in-out;
+}
+.navline:hover::after,.navline.active::after{
+  position: absolute;
+  width: 100%;
+}
 #newsletter{
   background-image: url("/src/assets/newsletter.png");
     background-position: 20% 30%;

@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react'
+import React,{useEffect, useState, useRef} from 'react'
 import { NavLink } from 'react-router-dom'
 import logo1 from '../assets/logo1.png'
 import close from '../assets/icons/close.png'
@@ -12,6 +12,7 @@ import Search from './Search'
 import { useAuth0 } from "@auth0/auth0-react";
 import { useSelector } from 'react-redux'
 import search from '../assets/icons/search.png'
+import Cart from './Cart'
 
 let list=[
   {name:'Home',path:''},
@@ -24,8 +25,9 @@ function Navbar() {
   const [ham,setHam]=useState(false)
   const [visible,setVisible]=useState(false)
   const navigate=useNavigate()
+  const menuRef = useRef(null);
   const AnimatePop=motion(LoginPopup)
-
+  const [pane,setPane]=useState(false)
   const {user, loginWithRedirect }=useAuth0()
 
   const userData=useSelector((state)=>state.auth.userData)
@@ -52,18 +54,17 @@ function Navbar() {
     setHam(!ham)
   }
 
-  // useEffect(()=>{
-  //   function exit(e){
-  //     if(!e.target.className.includes('navlist')){
-  //       console.log('true')
-  //       setHam(false)
-  //     }
-  //   }
-  //   document.addEventListener('click',exit)
-  //   return ()=>{
-  //     document.removeEventListener('click',exit)
-  //   }
-  // },[setHam])
+  useEffect(()=>{
+    function exit(e){
+      if(menuRef.current && !menuRef.current.contains(e.target) && !e.target.closest('.hamburger')) {
+        setHam(false)
+      }
+    }
+    document.addEventListener('click',exit)
+    return ()=>{
+      document.removeEventListener('click',exit)
+    }
+  },[setHam])
   
   return (
     <>
@@ -73,16 +74,16 @@ function Navbar() {
           <span className='md:pl-2 pt-1 text-lg md:text-xl font-bold'>NextGen</span>
         </NavLink>
         <div className='flex justify-center gap-5 md:gap-6 items-center'>
-          <div onClick={handleHam} className="sm:hidden">
+          <div onClick={handleHam} className="hamburger sm:hidden">
             {ham ? (
               <img loading="lazy" className="w-6 md:w-7 p-1" src={close} alt="close" />
             ) : (
               <img loading="lazy" className="w-6 md:w-7" src={menu} alt="menu" />
             )}
           </div>
-          <ul onClick={handleHam} className={`absolute sm:static top-16 right-2 z-10 flex flex-col sm:flex-row sm:gap-5 gap-1 ${ham ? 'flex bg-black/70 text-white px-7 py-5 rounded-lg sm:bg-transparent sm:text-current sm:px-0 sm:py-0 sm:rounded-none' : 'hidden sm:flex'}`}>
+          <ul ref={menuRef} onClick={handleHam} className={`absolute sm:static top-16 right-2 z-10 flex flex-col sm:flex-row sm:gap-5 gap-1 ${ham ? 'flex bg-black/70 text-white px-7 py-5 rounded-lg sm:bg-transparent sm:text-current sm:px-0 sm:py-0 sm:rounded-none' : 'hidden sm:flex'}`}>
           {list.map((item,id)=>{
-            return <NavLink key={id} to={item.path} className={({isActive})=>`${isActive?'text-emerald-600':''} navlist text-lg font-semibold md:text-xl font-quicksand hover:text-emerald-600`}>{item.name}</NavLink>
+            return <div className='relative'><NavLink key={id} to={item.path} className={({isActive})=>`${isActive?'text-emerald-600 active':''} navline max-w-max text-lg font-semibold md:text-xl font-quicksand hover:text-emerald-600`}>{item.name}</NavLink></div>
           })}
           </ul>
           <div className='hidden xl:block'>
@@ -94,8 +95,9 @@ function Navbar() {
             {user?'':<span className='text-base md:text-lg font-quicksand font-semibold '>Login</span>}
           </div>
           {visible && <AnimatePop initial={{scale:0}} animate={{scale:1}} className={`animate-bounce duration-100 absolute top-16 right-0 md:right-[95px] drop-shadow-md`}/>}
-          <img onClick={()=>navigate('cart')} className='cursor-pointer  hidden md:block w-[26px]' src={cart} alt="cart" />
+          <img onClick={()=>setPane(prev=>!prev)} className='cursor-pointer hidden md:block w-[26px]' src={cart} alt="cart" />
         </div>
+      {pane && <div><Cart/></div>}
       </div>
     </>
   )

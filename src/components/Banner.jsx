@@ -1,6 +1,7 @@
 import React from 'react'
 import banner1 from '../assets/product/banner1.png'
 import banner2 from '../assets/product/banner2.png'
+import banner3 from '../assets/product/banner3.png'
 import { useNavigate } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -23,6 +24,7 @@ function Banner() {
     >
       <SwiperSlide><img loading='lazy' onClick={()=>navigate('/')} src={banner1} className="cursor-pointer w-screen" alt="Banner"/></SwiperSlide>
       <SwiperSlide><img loading='lazy' onClick={()=>navigate('/')} src={banner2} className="cursor-pointer w-screen" alt="Banner"/></SwiperSlide>
+      <SwiperSlide><img loading='lazy' onClick={()=>navigate('/')} src={banner3} className="cursor-pointer w-screen" alt="Banner"/></SwiperSlide>
     </Swiper>
     </motion.div>
   )
