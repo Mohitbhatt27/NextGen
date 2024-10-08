@@ -1,6 +1,7 @@
 import React,{ lazy,Suspense } from 'react'
 const Soap=lazy(()=>import('../components/Soap'));
 const Juice=lazy(()=>import('../components/Juice'));
+const Oil=lazy(()=>import('../components/Oil'));
 const Banner=lazy(()=>import('../components/Banner'));
 const ProBanner=lazy(()=>import('../components/ProBanner'));
 
@@ -9,6 +10,7 @@ function ProductPage() {
     <Suspense fallback=''>
       <Banner/>
       <Juice/>
+      <Oil/>
       <ProBanner/>
       <Soap/>
     </Suspense>

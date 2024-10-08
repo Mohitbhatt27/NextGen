@@ -78,7 +78,7 @@ function Navbar() {
     return ()=>{
       document.removeEventListener('click',exit)
     }
-  },[setHam,setPane])
+  },[setHam])
   
   return (
     <>
@@ -111,7 +111,7 @@ function Navbar() {
           {visible && <AnimatePop initial={{scale:0}} animate={{scale:1}} className={`animate-bounce duration-100 absolute top-16 right-0 md:right-[95px] drop-shadow-md`}/>}
           <img onClick={()=>setPane(true)} className='cart cursor-pointer hidden md:block w-[26px]' src={cart} alt="cart" />
         </div>
-      {pane && <div ref={cartRef} className={`absolute right-0 top-0 z-50 w-1/3 h-screen shadow-[-3px_0_10px_0px_rgba(0,0,0,0.3)] bg-slate-100 `}><Cart toggle={toggle}/></div>}
+      {pane && <div ref={cartRef} className={`absolute right-0 top-0 z-50 w-1/3 h-screen shadow-[-3px_0_10px_0px_rgba(0,0,0,0.3)] bg-slate-100 transition-all duration-500 ease-linear ${pane?'translate-x-0':'translate-x-full'}`}><Cart toggle={toggle}/></div>}
       </div>
     </>
   )
