@@ -26,6 +26,7 @@ function Navbar() {
   const [visible,setVisible]=useState(false)
   const navigate=useNavigate()
   const menuRef = useRef(null);
+  const cartRef = useRef(null);
   const AnimatePop=motion(LoginPopup)
   const [pane,setPane]=useState(false)
   const {user, loginWithRedirect }=useAuth0()
@@ -54,17 +55,30 @@ function Navbar() {
     setHam(!ham)
   }
 
+  function toggle(){
+    setPane(!pane)
+  }
+
+  if(pane){
+    document.body.style.overflow='hidden'
+  }else{
+    document.body.style.overflow='auto'
+  }
+
   useEffect(()=>{
     function exit(e){
       if(menuRef.current && !menuRef.current.contains(e.target) && !e.target.closest('.hamburger')) {
         setHam(false)
+      }
+      if(cartRef.current && !cartRef.current.contains(e.target) && !e.target.closest('.cart')){
+        setPane(false)
       }
     }
     document.addEventListener('click',exit)
     return ()=>{
       document.removeEventListener('click',exit)
     }
-  },[setHam])
+  },[setHam,setPane])
   
   return (
     <>
@@ -90,14 +104,14 @@ function Navbar() {
             <Search/>
           </div>
           <img className='w-5 md:w-[22px] cursor-pointer xl:hidden' src={search} alt="" />
-          <div onClick={()=>{userData?navigate('/profile'):loginWithRedirect()}} className={`${user?'':'hover:bg-pink-500 hover:invert p-[6px] active:bg-pink-600 rounded-md '} flex justify-center items-center gap-2`}>
+          <div onClick={()=>{userData?navigate('/profile'):loginWithRedirect()}} className={`${user?'':'hover:bg-pink-500 hover:invert p-[6px] cursor-pointer active:bg-pink-600 rounded-md '} flex justify-center items-center gap-2`}>
             {user?.picture?<img className='w-8 cursor-pointer rounded-full' src={user.picture}/>:<img className='cursor-pointer w-5 md:w-6' src={profile}/>}
             {user?'':<span className='text-base md:text-lg font-quicksand font-semibold '>Login</span>}
           </div>
           {visible && <AnimatePop initial={{scale:0}} animate={{scale:1}} className={`animate-bounce duration-100 absolute top-16 right-0 md:right-[95px] drop-shadow-md`}/>}
-          <img onClick={()=>setPane(prev=>!prev)} className='cursor-pointer hidden md:block w-[26px]' src={cart} alt="cart" />
+          <img onClick={()=>setPane(true)} className='cart cursor-pointer hidden md:block w-[26px]' src={cart} alt="cart" />
         </div>
-      {pane && <div><Cart/></div>}
+      {pane && <div ref={cartRef} className={`absolute right-0 top-0 z-50 w-1/3 h-screen shadow-[-3px_0_10px_0px_rgba(0,0,0,0.3)] bg-slate-100 `}><Cart toggle={toggle}/></div>}
       </div>
     </>
   )
