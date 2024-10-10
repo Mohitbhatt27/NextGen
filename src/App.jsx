@@ -1,15 +1,21 @@
 import React,{useEffect,lazy,Suspense} from 'react'
 const Navbar=lazy(()=>import('./components/Navbar'))
 const Footer=lazy(()=>import('./components/Footer'))
-import { Outlet } from 'react-router-dom'
 const Helpdesk=lazy(()=>import('./components/Helpdesk'))
+import { Outlet } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
 import { useDispatch } from 'react-redux'
 import {login,logout} from './Redux/authSlice'
+import { addToCart } from './Redux/cartSlice'
 
 function App() {
   const {user,isAuthenticated,isLoading}=useAuth0()
   const dispatch=useDispatch()
+  
+  useEffect(()=>{
+    let cartItems=localStorage.getItem('cartItems')
+    dispatch(addToCart(JSON.parse(cartItems)))
+  },[])
 
   useEffect(()=>{
     if(!isLoading && isAuthenticated && user){

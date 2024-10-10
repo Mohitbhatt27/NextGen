@@ -97,7 +97,7 @@ function Navbar() {
           </div>
           <ul ref={menuRef} onClick={handleHam} className={`absolute sm:static top-16 right-2 z-10 flex flex-col sm:flex-row sm:gap-5 gap-1 ${ham ? 'flex bg-black/70 text-white px-7 py-5 rounded-lg sm:bg-transparent sm:text-current sm:px-0 sm:py-0 sm:rounded-none' : 'hidden sm:flex'}`}>
           {list.map((item,id)=>{
-            return <div className='relative'><NavLink key={id} to={item.path} className={({isActive})=>`${isActive?'text-emerald-600 active':''} navline max-w-max text-lg font-semibold md:text-xl font-quicksand hover:text-emerald-600`}>{item.name}</NavLink></div>
+            return <div key={id} className='relative'><NavLink to={item.path} className={({isActive})=>`${isActive?'text-emerald-600 active':''} navline max-w-max text-lg font-semibold md:text-xl font-quicksand hover:text-emerald-600`}>{item.name}</NavLink></div>
           })}
           </ul>
           <div className='hidden xl:block'>
@@ -111,7 +111,7 @@ function Navbar() {
           {visible && <AnimatePop initial={{scale:0}} animate={{scale:1}} className={`animate-bounce duration-100 absolute top-16 right-0 md:right-[95px] drop-shadow-md`}/>}
           <img onClick={()=>setPane(true)} className='cart cursor-pointer hidden md:block w-[26px]' src={cart} alt="cart" />
         </div>
-      {pane && <div ref={cartRef} className={`absolute right-0 top-0 z-50 w-1/3 h-screen shadow-[-3px_0_10px_0px_rgba(0,0,0,0.3)] bg-slate-100 transition-all duration-500 ease-linear ${pane?'translate-x-0':'translate-x-full'}`}><Cart toggle={toggle}/></div>}
+      {pane && <div ref={cartRef} className={`absolute right-0 top-0 z-50 w-[30%] h-screen shadow-[-3px_0_10px_0px_rgba(0,0,0,0.3)] bg-slate-100 transition-all duration-500 ease-linear ${pane?'translate-x-0':'translate-x-full'}`}><Cart toggle={toggle}/></div>}
       </div>
     </>
   )

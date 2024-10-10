@@ -27,52 +27,52 @@ function Soap() {
   }
   const soap = [
     {
-      title:'Lavender',
+      title:'Lavender soap',
       image:lav,
       price:'24.00'
     },
     {
-      title:'Shea Butter',
+      title:'Shea Butter soap',
       image:shea,
       price:'21.00'
     },
     {
-      title:'Khadi Natural',
+      title:'Khadi Natural soap',
       image:khadi,
       price:'21.00'
     }, 
     {
-      title:'Pink Clay',
+      title:'Pink Clay soap',
       image:clay,
       price:'19.00'
     },
     {
-      title:'Lavender',
+      title:'Lavender soap',
       image:s1,
       price:'34.00'
     },
     {
-      title:'Shea Butter',
+      title:'Shea Butter soap',
       image:s2,
       price:'29.00'
     },
     {
-      title:'Khadi Natural',
+      title:'Khadi Natural soap',
       image:s3,
       price:'19.00'
     }, 
     {
-      title:'Pink Clay',
+      title:'Pink Clay soap',
       image:s4,
       price:'19.00'
     },
     {
-      title:'Lavender',
+      title:'Lavender soap',
       image:s5,
       price:'19.00'
     },
     {
-      title:'Shea Butter',
+      title:'Shea Butter soap',
       image:s6,
       price:'19.00'
     },

@@ -23,52 +23,52 @@ function Juice() {
   }
   const juice = [
     {
-      title:'Aloe Vera',
+      title:'Aloe Vera juice',
       image:aelojuice,
       price:'49.00'
     },
     {
-      title:'Ginger Turmeric',
+      title:'Ginger Turmeric juice',
       image:ginger,
       price:"19.00"
     },
     {
-      title:'Mint Lemon',
+      title:'Mint Lemon juice',
       image:mint,
       price:'19.00'
     },
     {
-      title:'Holy Basil',
+      title:'Holy Basil juice',
       image:basil,
       price:'39.00'
     },
     {
-      title:'Aloe Vera',
+      title:'Cabbage juice',
       image:j1,
       price:'49.00'
     },
     {
-      title:'Ginger Turmeric',
+      title:'Anonymous juice',
       image:j2,
       price:"29.00"
     },
     {
-      title:'Mint Lemon',
+      title:'Bitter groud juice',
       image:j3,
       price:'19.00'
     },
     {
-      title:'Holy Basil',
+      title:'Turnip juice',
       image:j4,
       price:'39.00'
     },
     {
-      title:'Aloe Vera',
+      title:'Orange juice',
       image:j5,
       price:'29.00'
     },
     {
-      title:'Ginger Turmeric',
+      title:'Bitter groud juice',
       image:j6,
       price:"21.00"
     },
