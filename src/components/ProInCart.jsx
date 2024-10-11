@@ -11,7 +11,7 @@ function ProInCart() {
   return (
     <div className="flex font-nunito">
       <ul className="w-full mx-5">
-          {items.length!==0 && items.map((item, id) => (
+          {/* {items.length!==0 && items.map((item, id) => (
             <li key={id}>
               <div className="flex  p-2 justify-between">
                 <img className="w-16 aspect-square rounded-md" src={item.image} alt="" />
@@ -25,7 +25,7 @@ function ProInCart() {
                 </div>
               </div>
             </li>
-          ))}
+          ))} */}
       </ul>
     </div>
   );
