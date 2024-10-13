@@ -11,7 +11,8 @@ import ProInCart from './ProInCart';
 function Cart({toggle}) {
   const {loginWithRedirect}=useAuth0()
   const userData=useSelector(state=>state.auth.userData)
-  
+  const {totalPrice,totalQuantity}=useSelector(state=>state.cart)
+
   return (
     <div className='font-nunito'>
       <div className='flex px-5 justify-between items-center p-3'>
@@ -35,7 +36,7 @@ function Cart({toggle}) {
             <span className='text-gray-700 text-xs tracking-widest'>SUBTOTAL</span>
             <img className='h-4 opacity-50' src={question} alt="" />
           </div>
-          <span>money</span>
+          <span>{totalPrice}</span>
         </div>
         <div className='flex px-2 gap-2'>
           <input className='p-1 border border-black rounded-sm w-full text-sm' type="text" placeholder='Discount code or gift card'/>

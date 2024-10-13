@@ -13,9 +13,11 @@ function App() {
   const dispatch=useDispatch()
   
   useEffect(()=>{
-    let cartItems=localStorage.getItem('cartItems')
-    dispatch(addToCart(JSON.parse(cartItems)))
-  },[])
+    let cartData=JSON.parse(localStorage.getItem('cartItems'));
+    if(cartData && cartData.length>0){
+      dispatch(addToCart(cartData));
+    }
+  },[dispatch])
 
   useEffect(()=>{
     if(!isLoading && isAuthenticated && user){
